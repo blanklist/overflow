@@ -1,0 +1,7 @@
+<p>
+  <strong>Title: <%= @question.title %></strong>
+</p>
+
+<p><%= @question.body %> -<%= @question.user.username %></p>
+
+<%= link_to 'Questions Index', questions_path %>
