@@ -4,5 +4,5 @@ class User < ApplicationRecord
   has_many :comments
 
   validates :email, :username, uniqueness: true
-  validates :username, :email, :password_hash, presence: true
+  validates :username, :email, :password, presence: true
 end
