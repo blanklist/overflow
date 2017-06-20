@@ -1,7 +1,17 @@
+<%= link_to 'Questions Index', questions_path %>
 <p>
   <strong>Title: <%= @question.title %></strong>
 </p>
 
 <p><%= @question.body %> -<%= @question.user.username %></p>
 
-<%= link_to 'Questions Index', questions_path %>
+<% @question.comments.each do |comment| %>
+  <p>Comment: <%= comment.body %></p>
+<% end %>
+
+<% @answers.each do |answer| %>
+  <p><%= link_to answer.body, question_answer_path(answer) %></p>
+  <% answer.comments.each do |comment| %>
+    <p>Comment: <%= comment.body %> Submitted by: <%= comment.user.username %> Spoken on: <%= comment.created_at %></p>
+  <% end %>
+<% end %>

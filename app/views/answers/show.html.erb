@@ -1,0 +1,6 @@
+<p><%= @answer.body %></p>
+<p>Submitted by: <%= @answer.user.username %> at <%= @answer.created_at %></p>
+
+<% @answer.comments.each do |comment| %>
+  <p>Comment: <%= comment.body %></p>
+<% end %>
